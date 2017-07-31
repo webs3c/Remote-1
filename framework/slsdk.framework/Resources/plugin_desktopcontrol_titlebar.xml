@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<orayui version="1.0">
+  <include src="color.xml" />
+  <include src="font.xml" />
+  <include src="plugin_desktopcontrol_language.xml" />
+  
+<script><![CDATA[
+    function on_init()
+        uidialog:log("titlebar init");
+        local pos = uidialog:getwindowpos();
+        --uidialog:move(0,0,320,26);
+        uidialog:move( pos.left, pos.top, 200, 26 );
+    end
+    
+    function on_exit()
+
+    end
+    
+    
+    function on_extend( extend )
+        titlebar:setvisible( extend );
+        Narraw:setvisible( not extend );
+    end
+    
+    
+    function onclick_Narraw()
+        on_extend( true );
+    end
+    
+    function onclick_username()
+      --local pt = GetCursorPos();
+      local rc = username.pos;
+      dlg_titlebar:popup_sid( rc.left, rc.bottom );
+    end
+    
+    
+    function onclick_switchscreen()
+        local rc = switchscreen.pos;
+        dlg_titlebar:popup_switchscreen( rc.left, rc.bottom );
+    end
+    
+    function onclick_sound()
+      dlg_titlebar:enable_sound( sound.check );
+    end
+    
+    
+    function onclick_chat()
+      dlg_titlebar:showchatdlg();
+    end
+    
+    function onclick_fullscreen()
+      dlg_titlebar:fullscreen( normalsize.check );
+    end
+    
+    
+    function onclick_more()
+        local rc = more.pos;
+        dlg_titlebar:popup_more( rc.left, rc.bottom );
+    end
+    
+]]></script>
+    
+<oraywnd id="206" name="titlebar" text="" tooltip="" focusable="false" visible="true" enable="true" left="0" top="0" width="476" height="26" alpha="255" align="LEFT|TOP" bkcolor="RGB(255,0,255)" cursor="" transparentbk="true" minwidth="0" minheight="0" shaped="true">
+    <!-- assist -->
+    <oraypanel name="titlebar" text="" tooltip="" visible="true" enable="true" left="0" top="0" width="476" height="26" alpha="255" align="LEFT|TOP|RIGHT" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="" group="0" check="false">
+      <oraystatic id="0" name="titlebar_background" text="" tooltip="" visible="true" enable="true" left="0" top="0" width="476" height="26" alpha="255" align="LEFT|TOP|RIGHT" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" autolength="false" ellipsis="false">
+        <image state="all" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/toolbar.png" rectpos="0,0,420,26" rectmargin="3,3,3,3" paintmode="stretchall" onlyborder="false" transparent="false" alpha="255" />
+      </oraystatic>
+      <!-- left -->
+      <oraybutton id="20301" name="username" text="" tooltip="@switch_user" visible="true" enable="true" left="40" top="5" width="16" height="16" alpha="255" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false"
+        onclick="onclick_username"
+      >
+        <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_switch_sessions_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_switch_sessions_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_switch_sessions_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="disable" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_switch_sessions_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="checked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_switch_sessions_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+      </oraybutton>
+      <oraybutton id="20302" name="switchscreen" text="" tooltip="@switch_screen" visible="true" enable="true" left="96" top="5" width="16" height="16" alpha="255" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false"
+        onclick="onclick_switchscreen"
+      >
+        <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_screen_switching_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_screen_switching_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_screen_switching_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="disable" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_screen_switching_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="checked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_screen_switching_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+      </oraybutton>
+      <oraybutton id="20303" name="sound" text="11" tooltip="@sound" visible="false" enable="true" left="152" top="5" width="16" height="16" alpha="255" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="check" group="0" check="true"
+        onclick="onclick_sound"
+      >
+        <image state="normal|checked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_sound_off_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="normal|unchecked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_voice_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="hot|checked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_sound_off_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="hot|unchecked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_voice_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="down|checked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_sound_off_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="down|unchecked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_voice_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="disable|checked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_sound_off_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="disable|unchecked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_sound_off_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+      </oraybutton>
+      <oraybutton id="20309" name="chat" text="" tooltip="@chat_tip" visible="false" enable="true" left="208" top="5" width="17" height="16" alpha="255" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false"
+        onclick="onclick_chat"
+      >
+        <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/chat_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/chat_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/chat_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="disable" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/chat_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="checked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/chat_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+      </oraybutton>
+      <!--
+      <oraybutton id="20304" name="lock_key" text="" tooltip="@forbid_mouse_key" visible="false" enable="false" left="208" top="5" width="18" height="18" alpha="255" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false">
+        <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="bt_keyboardinput_normal" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="bt_keyboardinput_hot" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="bt_keyboardinput_hot" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="checked" left="0" top="0" width="0" height="0" visible="true" picfile="bt_keyboardinput_hot" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="disable" left="0" top="0" width="0" height="0" visible="true" picfile="bt_keyboardinput_normal" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+      </oraybutton>
+      <oraybutton id="20305" name="color" text="" tooltip="@color" visible="false" enable="false" left="264" top="5" width="18" height="18" alpha="255" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false">
+        <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="bt_sketchpad_normal" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="bt_sketchpad_hot" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="bt_sketchpad_hot" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="checked" left="0" top="0" width="0" height="0" visible="true" picfile="bt_sketchpad_hot" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="disable" left="0" top="0" width="0" height="0" visible="true" picfile="bt_sketchpad_normal" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+      </oraybutton>
+      -->
+      <oraybutton id="20306" name="normalsize" text="" tooltip="@full_screen" visible="false" enable="true" left="264" top="5" width="16" height="16" alpha="255" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false"
+        onclick="onclick_fullscreen"
+      >
+        <image state="normal" left="0" top="0" width="0" height="0" visible="false" picfile="skin_desktopcontrol/bt_normal_screen_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="false" picfile="skin_desktopcontrol/bt_normal_screen_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="false" picfile="skin_desktopcontrol/bt_normal_screen_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="checked" left="0" top="0" width="0" height="0" visible="false" picfile="skin_desktopcontrol/bt_normal_screen_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_full_screen_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_full_screen_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_full_screen_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+        <image state="checked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/bt_full_screen_hot.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+      </oraybutton>
+      <oraybutton id="20307" name="more" text="" tooltip="@more" visible="true" enable="true" left="152"  lefts="264" top="5" width="16" height="16" alpha="255" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false"
+        onclick="onclick_more"
+      >
+        <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/more_normal.png" rectpos="0,0,16,16" rectmargin="0,0,0,0" paintmode="stretchall" onlyborder="false" transparent="false" alpha="255" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/more_hot.png" rectpos="0,0,16,16" rectmargin="0,0,0,0" paintmode="stretchall" onlyborder="false" transparent="false" alpha="255" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/more_hot.png" rectpos="0,0,16,16" rectmargin="0,0,0,0" paintmode="stretchall" onlyborder="false" transparent="false" alpha="255" />
+        <image state="checked" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/more_hot.png" rectpos="0,0,16,16" rectmargin="0,0,0,0" paintmode="stretchall" onlyborder="false" transparent="false" alpha="255" />
+      </oraybutton>
+    </oraypanel>
+    <!-- bottom -->
+    <oraybutton id="20308" name="Narraw" text="" tooltip="" visible="true" enable="true" left="85" top="0" width="30" height="14" alpha="255" align="LEFT|TOP" bkcolor="RGB(255,0,0)" cursor="" transparentbk="false" type="" group="0" check="false"
+      onclick="onclick_Narraw"
+    >
+      <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/toolbar.png" rectpos="52,77,82,91" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+      <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/toolbar.png" rectpos="52,48,82,62" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+      <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/toolbar.png" rectpos="52,48,82,62" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+    </oraybutton>
+</oraywnd>
+</orayui>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<orayui version="1.0">
+<script><![CDATA[
+    function on_init()
+      uidialog:log("stop dialog init");
+    end
+    
+    function on_exit()
+      uidialog:log("stop dialog hide");
+    end
+]]></script>
+
+<oraywnd id="207" name="stop" text="" tooltip="" visible="true" enable="true" left="0" top="0" width="440" height="280" alpha="0" align="LEFT|TOP" bkcolor="RGB(0,0,0)" cursor="" transparentbk="false" minwidth="200" minheight="400" shaped="true">
+    <roundrect state="all" visible="true" linetype="0" linewidth="1" roundwidth="0" roundheight="0" bordercolor="RGB(0,0,0)" transparent="true" onlyborder="" bkcolor="RGB(255,0,0)" alpha="255"/>
+  <oraypanel id="0" name="center" text="" tooltip="" visible="true" enable="true" left="95" top="95" width="250" height="90" alpha="255" align="HCENTER|VCENTER" bkcolor="RGB(255,153,0)" cursor="" transparentbk="true">
+    <oraystatic id="0" name="icon" text="" tooltip="" visible="true" enable="true" left="100" top="0" width="49" height="49" alpha="255" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" autolength="false" ellipsis="false">
+      <image state="all" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/plugin_stop_icon.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="true" alpha="255" />
+    </oraystatic>
+    <oraystatic id="0" name="text" text="@connection_stop" tooltip="" visible="true" enable="true" left="0" top="55" width="250" height="20" alpha="255" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" autolength="false" ellipsis="false">
+      <text state="all" left="0" top="0" width="0" height="0" visible="true" textcolor="RGB(255,255,255)" horzalign="center" vertalign="center" singleline="true" font="yahei.12" />
+    </oraystatic>
+  </oraypanel>
+</oraywnd>
+
+</orayui>

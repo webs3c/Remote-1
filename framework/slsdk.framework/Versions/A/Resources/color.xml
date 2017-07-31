@@ -1,0 +1,26 @@
+﻿<orayui version="1.0">
+  <color>
+    <color id="color.main" value="RGB(255,138,86)" canadjust="false" />
+    <color id="color.hot" value="RGB(255,150,104)" canadjust="false" />
+    <color id="color.down" value="RGB(255,112,51)" canadjust="false" />
+    <color id="color.white" value="RGB(255,255,255)" canadjust="false" />
+    <color id="color.disable" value="RGB(221,221,221)" canadjust="false" />
+    <color id="color.black" value="RGB(0,0,0)" canadjust="false" />
+    <color id="color.frame" value="RGB(147,131,123)" canadjust="false" />
+    <color id="color.bg.hot" value="RGB(232,17,35)" canadjust="false" />
+    <color id="color.bg.down" value="RGB(202,11,27)" canadjust="false" />
+    <color id="color3" value="RGB(51,51,51)" canadjust="false" />
+    <color id="color4" value="RGB(153,153,153)" canadjust="false" />
+    <color id="color5" value="RGB(106,106,106)" canadjust="false" />
+    <color id="color6" value="RGB(37,133,227)" canadjust="false" />
+    <color id="color7" value="RGB(218,86,0)" canadjust="false" />
+    <color id="color8" value="RGB(164,163,163)" canadjust="false" />
+    <color id="color9" value="RGB(255,112,06)" canadjust="false" />
+    <color id="color10" value="RGB(255,132,0)" canadjust="false" />
+    <color id="color11" value="RGB(246,106,0)" canadjust="false" />
+    <color id="color12" value="RGB(192,192,192)" canadjust="false" />
+    <color id="color13" value="RGB(244,244,244)" canadjust="false" />
+    <color id="color14" value="RGB(234,234,234)" canadjust="false" />
+    <color id="color15" value="RGB(255,0,66)" canadjust="false" />
+  </color>
+</orayui>

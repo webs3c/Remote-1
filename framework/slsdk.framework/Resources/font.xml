@@ -1,0 +1,9 @@
+﻿<orayui version="1.0">
+  <font>
+    <font id="Tahoma" fontface="Tahoma" fontsize="16" underline="false" italic="false" bold="false" />
+    <font id="normal" fontface="微软雅黑" fontsize="12" underline="false" italic="false" bold="false" />
+    <font id="big" fontface="微软雅黑" fontsize="14" underline="false" italic="false" bold="false" />
+    <font id="bigger" fontface="微软雅黑" fontsize="18" underline="false" italic="false" bold="false" />
+    <font id="large" fontface="微软雅黑" fontsize="24" underline="false" italic="false" bold="false" />
+  </font>
+</orayui>

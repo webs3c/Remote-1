@@ -1,0 +1,6 @@
+framework module slsdk {
+  umbrella header "slsdk.h"
+
+  export *
+  module * { export * }
+}

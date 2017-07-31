@@ -1,0 +1,61 @@
+﻿<orayui version="1.0">
+  <!-- 语言 -->
+  <language>
+    <!-- 简体中文 -->
+    <language name="简体中文" id="2052" value="chs" >
+    <!--远程桌面-->
+    <item id="desktop_model" value="桌面模式" />
+    <item id="rule_mode_h264" value="娱乐模式" />
+    <item id="rule_mode_zip" value="工作模式" />
+    <clipboard id="clipboard" value="同步剪贴板" />
+    <lock_menu id="lock_menu" value="锁定" />
+    <logout_menu id="logout_menu" value="注销" />
+    <restart_menu id="restart_menu" value="重新启动" />
+    <shutdown_menu id="shutdown_menu" value="关机" />
+    <resourse_manager_menu id="resourse_manager_menu" value="资源管理器" />
+    <tast_manager_menu id="tast_manager_menu" value="任务管理器" />
+    <computer_console_menu id="computer_console_menu" value="计算机控制台" />
+    <connection_stop id="connection_stop" value="连接停止" />
+    <switch_user id="switch_user" value="切换会话" />
+    <switch_screen id="switch_screen" value="切换屏幕" />
+    <sound id="sound" value="声音" />
+    <forbid_mouse_key id="forbid_mouse_key" value="禁止对方鼠标和键盘输入" />
+    <allow_mouse_key id="allow_mouse_key" value="允许对方鼠标和键盘输入" />
+    <color id="color" value="屏幕白板" />
+    <full_screen id="full_screen" value="全屏" />
+    <more id="more" value="更多" />
+    <desktop_title id="desktop_title" value="向日葵远控" />
+    <shutdown_question id="shutdown_question" value="即将关闭远程计算机,请保存所有正在运行的工作." />
+    <reboot_question id="reboot_question" value="即将重启远程计算机,请保存所有正在运行的工作." />
+    <logoff_question id="logoff_question" value="即将注销远程计算机,请保存所有正在运行的工作." />    
+  </language>
+  <!-- English -->
+  <language name="English" id="1033" value="eng" >
+     <!--远程桌面-->
+   <item id="desktop_model" value="Desktop mode" />
+    <item id="rule_mode_h264" value="Entertainment" />
+    <item id="rule_mode_zip" value="Office" />
+    <clipboard id="clipboard" value="Clipboard synchronization" />
+    <lock_menu id="lock_menu" value="Lock" />
+    <logout_menu id="logout_menu" value="Logout" />
+    <restart_menu id="restart_menu" value="Restart" />
+    <shutdown_menu id="shutdown_menu" value="Shutdown" />
+    <resourse_manager_menu id="resourse_manager_menu" value="Explorer" />
+    <tast_manager_menu id="tast_manager_menu" value="Task Manager" />
+    <computer_console_menu id="computer_console_menu" value="Console" />
+    <connection_stop id="connection_stop" value="Disconnected" />
+    <switch_user id="switch_user" value="Switch session" />
+    <switch_screen id="switch_screen" value="Switch screen" />
+    <sound id="sound" value="Sound" />
+    <forbid_mouse_key id="forbid_mouse_key" value="Block input of host" />
+    <allow_mouse_key id="allow_mouse_key" value="Allow input of host" />
+    <color id="color" value="creen whiteboard" />
+    <full_screen id="full_screen" value="Full screen" />
+    <more id="more" value="More" />
+    <desktop_title id="desktop_title" value="Sunlogin remote control" />
+    <shutdown_question id="shutdown_question" value="Shutting down remote devices, please save all the running programs" />
+    <reboot_question id="reboot_question" value="Restarting remote devices, please save all the running programs" />
+    <logoff_question id="logoff_question" value="Logging of remote devices, please save all the running programs" />
+  </language>
+</language>
+</orayui>

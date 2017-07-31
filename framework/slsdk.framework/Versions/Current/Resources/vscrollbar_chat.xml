@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<orayui version="1.0">
+  <orayscrollbar id="30004" type="vertical" name="" tooltip="" visible="true" enable="true" left="0" top="0" width="8" height="200" alpha="0" align="LEFT|TOP" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true">
+    <oraypanel name="track" text="" tooltip="" visible="true" enable="true" left="0" top="12" width="8" height="172" alpha="0" align="LEFT|TOP|BOTTOM|RIGHT" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true">
+      <image state="all" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar.png" rectpos="1,150,10,170" rectmargin="0,0,0,0" paintmode="stretchall" onlyborder="false" transparent="false" alpha="0" />
+      <oraybutton id="0" name="pageup" text="" tooltip="" visible="true" enable="true" left="0" top="0" width="8" height="100" alpha="0" align="LEFT|RIGHT" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false">
+        <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar.png" rectpos="1,150,10,170" rectmargin="0,0,0,0" paintmode="tiles" onlyborder="false" transparent="false" alpha="0" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar.png" rectpos="1,150,10,170" rectmargin="0,0,0,0" paintmode="tiles" onlyborder="false" transparent="false" alpha="0" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar.png" rectpos="1,150,10,170" rectmargin="0,0,0,0" paintmode="tiles" onlyborder="false" transparent="false" alpha="0" />
+      </oraybutton>
+      <oraybutton id="0" name="pagedown" text="" tooltip="" visible="true" enable="true" left="0" top="0" width="8" height="100" alpha="0" align="LEFT|RIGHT" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false">
+        <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar.png" rectpos="1,150,10,170" rectmargin="0,0,0,0" paintmode="tiles" onlyborder="false" transparent="false" alpha="0" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar.png" rectpos="1,150,10,170" rectmargin="0,0,0,0" paintmode="tiles" onlyborder="false" transparent="false" alpha="0" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar.png" rectpos="1,150,10,170" rectmargin="0,0,0,0" paintmode="tiles" onlyborder="false" transparent="false" alpha="0" />
+      </oraybutton>
+      <oraybutton id="0" name="thumb" text="" tooltip="" visible="true" enable="true" left="0" top="16" width="8" height="18" alpha="0" align="LEFT|RIGHT" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false">
+        <image state="normal" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar.png" rectpos="0,0,9,38" rectmargin="0,6,0,6" paintmode="stretchall" onlyborder="false" transparent="false" alpha="0" />
+        <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar.png" rectpos="0,50,9,88" rectmargin="0,6,0,6" paintmode="stretchall" onlyborder="false" transparent="false" alpha="0" />
+        <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar.png" rectpos="0,100,9,138" rectmargin="0,6,0,6" paintmode="stretchall" onlyborder="false" transparent="false" alpha="0" />
+        <!--image state="all" left="0" top="5" width="9" height="8" visible="true" picfile="skin/scrollbar.png rectpos="0,175,9,183" align="LEFT|RIGHT|RIGHT|BOTTOM" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="0" /-->
+      </oraybutton>
+    </oraypanel>
+    <oraybutton id="0" name="up" text="" tooltip="" visible="true" enable="true" left="0" top="4" width="8" height="4" alpha="0" align="LEFT|TOP|RIGHT" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="push" group="0" check="false">
+      <image state="all" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar_top.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="0" />
+    </oraybutton>
+    <oraybutton id="0" name="down" text="" tooltip="" visible="true" enable="true" left="0" top="188" width="8" height="4" alpha="0" align="LEFT|BOTTOM|RIGHT" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true" type="" group="0" check="false">
+      <image state="all" left="0" top="0" width="0" height="0" visible="true" picfile="skin/scrollbar_bottom.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="0" />
+    </oraybutton>
+  </orayscrollbar>
+</orayui>

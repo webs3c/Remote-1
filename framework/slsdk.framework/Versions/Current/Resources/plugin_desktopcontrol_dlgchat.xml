@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<orayui version="1.0">
+    
+<script><![CDATA[
+  
+left_msg   = 0;
+middle_msg = 1;
+right_msg  = 2;
+  
+    
+function on_load()
+  uidialog.title = dlg_chat:_getTitleName();
+  syswintitle.text = uidialog.title;
+end
+
+function on_close()
+  uidialog:hide();
+  return 1;
+end
+
+function on_exit()
+    return on_close();
+end
+
+function onclick_bt_send()
+  local msg = message_edit.text;
+  if string.len(msg) == 0 then
+    return true;
+  end
+  dlg_chat:send_message( msg );
+  dlg_chat:append_message( msg, right_msg );
+end
+
+
+function onkeydown_message_edit( c, cnt )
+
+  if c == 13 then
+    if uidialog:isctrlkey() then
+      --message_edit.text = message_edit.text .. "\r";
+    else
+      onclick_bt_send();
+      return 1;
+    end
+  end
+  
+  return 0;
+end
+
+
+]]></script>
+    
+<oraywnd id="208" name="chat" frame="frame_fast_control" text="" shadow="1" tooltip="" visible="true" enable="true" left="0" top="0" width="518" height="411" alpha="255" align="LEFT|TOP" bkcolor="RGB(255,255,255)" cursor="" transparentbk="false" minwidth="200" minheight="400" shaped="true">
+  <oraytreectrlex id="20800" indent="0" vspace="0" hspace="15" vscrollbar="vscrollbar_chat" name="ContactTree" text="" tooltip="" visible="true" enable="true" left="0" top="10" width="516" height="336" alpha="255" align="LEFT|TOP|RIGHT|BOTTOM" bkcolor="RGB(240,240,240)" cursor="" transparentbk="true">
+    <SelectedItemStyle tooltip="" visible="true" enable="true" bkcolor="RGB(255,255,255)" transparentbk="false" type="" group="0" check="false" alpha="50">
+    </SelectedItemStyle>
+    <ForedItemStyle tooltip="" visible="true" enable="true" bkcolor="RGB(255,255,255)" transparentbk="false" type="" group="0" check="false" alpha="50">
+    </ForedItemStyle>
+    <ItemStyle tooltip="" visible="true" enable="true" bkcolor="RGB(255,255,255)" transparentbk="false" type="" group="0" check="false">
+    </ItemStyle>
+    <ItemTemplates>
+      <ItemTemplate name="chat_message" visible="true" activatepoints="" selectpos="" hotpos="" width="516" height="56" bkcolor="RGB(0,255,0)" transparentbk="true">
+        <oraypanel id="" name="left_message" text="" tooltip="" visible="true" selectable="false" enable="true" left="20" top="0" width="250" height="28" alpha="255" align="LEFT|TOP" bkcolor="RGB(255,255,255)" cursor="" transparentbk="true" autolength="false">
+          <image state="all" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/left_chat_bg.png" rectpos="0,0,0,0" rectmargin="6,1,1,8" paintmode="stretchall" onlyborder="false" transparent="false" alpha="255" />
+          <oraystatic name="left_message_text" text="" tooltip="" visible="true" enable="true" left="13" top="7" width="0" height="0" alpha="255" align="LEFT|TOP" bkcolor="" cursor="ibeam" transparentbk="true" autolength="false" selectable="true" rangefgcolor="RGB(0,255,0)" ellipsis="false">
+            <text state="all" left="0" top="0" width="0" height="0" visible="true" textcolor="RGB(51,51,51)" horzalign="left" vertalign="top" singleline="false" richtext="false" font="yahei.12" light="yahei.12" />
+          </oraystatic>
+        </oraypanel>
+        <oraystatic id="" name="middle_message" text="" tooltip="" visible="true" enable="true" left="0" top="0" width="516" height="14" alpha="255" align="LEFT|TOP|RIGHT" bkcolor="RGB(255,255,255)" cursor="" transparentbk="true" autolength="false">
+          <text state="all" left="0" top="0" width="0" height="0" visible="true" textcolor="RGB(187,187,187)" horzalign="center" vertalign="center" singleline="true" font="yahei.12"/>
+        </oraystatic>
+        <oraypanel id="" name="right_message" text="" tooltip="" visible="true" selectable="false" enable="true" left="250" top="0" width="250" height="28" alpha="255" align="RIGHT|TOP" bkcolor="RGB(255,255,255)" cursor="" transparentbk="true" autolength="false">
+          <image state="all" left="0" top="0" width="0" height="0" visible="true" picfile="skin_desktopcontrol/right_chat_bg.png" rectpos="0,0,0,0" rectmargin="1,1,6,8" paintmode="stretchall" onlyborder="false" transparent="false" alpha="255" />
+          <oraystatic name="right_message_text" text="" tooltip="" visible="true" enable="true" left="8" top="7" width="0" height="0" alpha="255" align="LEFT|TOP" bkcolor="" cursor="ibeam" transparentbk="true" autolength="false" selectable="true" rangefgcolor="RGB(0,255,0)" ellipsis="false">
+            <text state="all" left="0" top="0" width="0" height="0" visible="true" textcolor="RGB(255,255,255)" horzalign="left" vertalign="top" singleline="false" richtext="false" font="yahei.12" light="yahei.12" />
+          </oraystatic>
+        </oraypanel>
+      </ItemTemplate>
+    </ItemTemplates>
+  </oraytreectrlex>
+  <oraystatic id="0" name="bottom_bg" text="" tooltip="" visible="true" enable="true" left="0" top="344" width="518" height="68" alpha="255" align="LEFT|RIGHT|BOTTOM" bkcolor="RGB(242,242,242)" cursor="" transparentbk="false" autolength="false" ellipsis="false">
+  </oraystatic>
+  <oraystatic id="" name="round_normal" text="" tooltip="" visible="true" enable="true" left="6" top="350" width="448" height="56" alpha="255" align="LEFT|RIGHT|BOTTOM" bkcolor="RGB(255,255,255)" transparentbk="true" >
+    <roundrect state="all" visible="true" linetype="0" linewidth="1" roundwidth="0" roundheight="0" bordercolor="RGB(191,191,191)" transparent="true" onlyborder="" />
+  </oraystatic>
+  <oraystatic id="" name="round_hot" text="" tooltip="" visible="false" enable="true" left="6" top="350" width="448" height="56" alpha="255" align="LEFT|RIGHT|BOTTOM" bkcolor="RGB(255,255,255)" transparentbk="true" >
+    <roundrect state="all" visible="true" linetype="0" linewidth="1" roundwidth="0" roundheight="0" bordercolor="color.main" transparent="true" onlyborder="" />
+  </oraystatic>
+  <orayedit id="0" name="message_edit" password="false" multiline="true" vscrollbarid="30005" text="" tooltip="" visible="true" enable="true" left="7" top="351" width="446" height="54" alpha="255" tab="0" align="LEFT|RIGHT|BOTTOM" bkcolor="RGB(255,255,255)" transparentbk="false" autolength="true" ellipsis="false" margin="3,3,10,3" font="yahei.12" fontcolor="color4" readonly="false"
+    onkeydown="onkeydown_message_edit"
+>
+    <oraystatic name="mask" text="" tooltip="" visible="true" enable="true" left="5" top="0" width="441" height="54" alpha="255" align="LEFT|RIGHT|TOP|BOTTOM" bkcolor="" cursor="ibeam" transparentbk="true" autolength="false" selectable="false" rangefgcolor="RGB(0,255,0)" ellipsis="false">
+      <text state="all" left="0" top="10" width="0" height="0" visible="true" textcolor="RGB(51,51,51)" horzalign="left" vertalign="top" singleline="false" font="yahei.12" light="yahei.12" />
+    </oraystatic>
+  </orayedit>
+  <oraybutton id="20801" name="bt_send" text="@feedback_send"  focusable="true" tooltip="" visible="true" enable="true" left="454" top="350" width="56" height="56" alpha="255" align="RIGHT|BOTTOM" bkcolor="RGB(240,0,240)" cursor="ha70nd" transparentbk="true" group="10"
+    
+    onclick="onclick_bt_send"
+  >
+    <roundrect state="normal" visible="true" linetype="0" linewidth="1" roundwidth="0" roundheight="0" bkcolor="color.main" bordercolor="color.main" transparent="false" onlyborder="" />
+    <roundrect state="hot" visible="true" linetype="0" linewidth="1" roundwidth="0" roundheight="0" bkcolor="color.hot" bordercolor="color.hot" transparent="false" onlyborder="" />
+    <roundrect state="down" visible="true" linetype="0" linewidth="1" roundwidth="0" roundheight="0" bkcolor="color.down" bordercolor="color.down" transparent="false" onlyborder="" />
+    <roundrect state="disable" visible="true" linetype="0" linewidth="1" roundwidth="0" roundheight="0" bkcolor="color.disable" bordercolor="color.disable" transparent="false" onlyborder="" />
+    <text state="all" left="0" top="0" width="0" height="0" visible="true" textcolor="RGB(255,255,255)" horzalign="center" vertalign="center" singleline="true" font="yahei.12" />
+  </oraybutton>
+</oraywnd>
+
+</orayui>

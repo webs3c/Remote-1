@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<orayui>
+  <include src="color.xml" />
+  <script src="">
+    <![CDATA[
+    mousedown = false;
+    down_pt = nil;
+    old_winpos = nil;
+
+    function on_drag_begin(x,y)    
+      mousedown = true;
+      down_pt = GetCursorPos();
+      old_winpos = uidialog:getwindowpos();		
+      return 1;    
+    end
+
+    function on_drag_mousemove(x,y)
+      if mousedown then	
+        pt = GetCursorPos();
+        left = old_winpos.left + pt.x - down_pt.x;
+        right = old_winpos.top + pt.y - down_pt.y;
+        width = old_winpos.right - old_winpos.left;
+        height = old_winpos.bottom - old_winpos.top;
+        uidialog:move(left,right,width,height);
+      end
+      return 1;   
+    end
+
+    function on_drag_end(x,y)    
+      mousedown = false;		  
+      return 1;    
+    end
+
+
+    
+    function onframecloseclick()    
+      return on_close();
+    end
+    
+    function onframeminclick()    
+      uidialog:min();
+      return 1;
+    end
+
+    function on_init()
+      uidialog.title = "@application_name";
+      syswintitle.text = uidialog.title;
+      
+      on_load();
+    end
+  ]]>
+  </script>
+
+  <orayframe name="fast_control_frame" left="0" top="0" width="570" height="320" leftwidth="0" topheight="27" rightwidth="0" bottomheight="0"  bkcolor="color.main" transparent="false" alpha="255" sysbtn="close|min">
+    <!--image name="top" height="1" rectpos="0,0,1,1" rectmargin="0,0,0,0" picfile="skin/mainframtitle.png" state="all" paintmode="stretchall" transparent="false" alpha="255" /-->
+    <!--image name="left" rectpos="0,0,1,1" rectmargin="0,0,0,0" picfile="skin/mainframtitle.png" state="all" paintmode="stretchall" transparent="false" alpha="255" />
+    <image name="right" rectpos="0,0,1,1" rectmargin="0,0,0,0" picfile="skin/mainframtitle.png" state="all" paintmode="stretchall" transparent="false" alpha="255" />
+    <image name="bottom" rectpos="0,0,1,1" rectmargin="0,0,0,0" picfile="skin/mainframtitle.png" state="all" paintmode="stretchall" transparent="false" alpha="255" /-->
+
+    <oraybutton id="0" name="btnSysmin" text="" tooltip="@minimize" visible="false" enable="true" left="40" top="1" width="36" height="26" alpha="255" align="TOP|LEFT" bkcolor="RGB(0,0,0)" cursor="" transparentbk="true" type="push" group="0" check="false"
+      onclick="onframeminclick"            
+    >      
+      <image state="hot" left="0" top="0" width="0" height="0" visible="true" picfile="skin/other_up.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="stretchall" onlyborder="false" transparent="false" alpha="255" />
+      <image state="down" left="0" top="0" width="0" height="0" visible="true" picfile="skin/other_down.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="stretchall" onlyborder="false" transparent="false" alpha="255" />
+
+      <image state="all" left="10" top="5" width="0" height="0" visible="true" picfile="skin/bt_minimize_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+    </oraybutton>
+
+    <oraybutton id="0" name="btnSysclose" text="" tooltip="@close" visible="false" enable="true" left="0" top="1" width="36" height="26" alpha="255" align="TOP|LEFT" bkcolor="" cursor="" transparentbk="true" type="push" group="0" check="false"
+      onclick="onframecloseclick"            
+    >
+      <roundrect state="hot" visible="true" linetype="0" linewidth="1" roundwidth="0" roundheight="0" bkcolor="color.bg.hot" bordercolor="color.bg.hot" transparent="false" onlyborder="" />
+      <roundrect state="down" visible="true" linetype="0" linewidth="1" roundwidth="0" roundheight="0" bkcolor="color.bg.down" bordercolor="color.bg.down" transparent="false" onlyborder="" />
+
+      <image state="all" left="10" top="5" width="0" height="0" visible="true" picfile="skin/bt_shutdown_normal.png" rectpos="0,0,0,0" rectmargin="0,0,0,0" paintmode="normal" onlyborder="false" transparent="false" alpha="255" />
+    </oraybutton>
+
+    <oraystatic id="0" name="state_icon" text="" tooltip="" visible="false" enable="true" left="12" top="5" width="16" height="16" alpha="255" align="RIGHT|TOP" bkcolor="" cursor="" transparentbk="true" autolength="false" ellipsis="false">
+      <image state="all" name="icon" rectpos="0,0,0,0" rectmargin="0,0,0,0" picfile="skin/icon_online.png" paintmode="normal" transparent="false" alpha="255" />
+    </oraystatic>
+    <oraystatic id="0" name="syswintitle" text="" tooltip="" visible="true" enable="true" left="0" top="0" width="570" height="26" alpha="255" align="RIGHT|TOP|LEFT" bkcolor="" cursor="" transparentbk="true" autolength="false" ellipsis="false"
+        onlbuttondown="on_drag_begin"
+        onlbuttonup="on_drag_end"
+        onmousemove="on_drag_mousemove"
+        >
+      <text state="all" left="0" top="0" width="0" height="0" visible="true" textcolor="RGB(255,255,255)" horzalign="center" vertalign="center" singleline="true" font="yahei.12" />
+    </oraystatic>
+  </orayframe>
+ 
+</orayui>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<orayui version="1.0">
+    <menu>
+        <item type="submenu" text="@desktop_model" cmd="0">
+            <item type="item" text="@rule_mode_zip" cmd="40044"/>
+            <item type="item" text="@rule_mode_h264" cmd="40045" />
+        </item>
+        <item type="item" text="@clipboard" cmd="40046"/>
+        <item type="seperator" />
+        <item type="item" text="CTRL+ALT+DELETE" cmd="40027" />
+        <item type="item" text="@lock_menu" cmd="40028" />
+        <item type="item" text="@logout_menu" cmd="40029" />
+        <item type="item" text="@restart_menu" cmd="40030" />
+        <item type="item" text="@shutdown_menu" cmd="40031" />
+        
+        <item type="seperator" />
+        <item type="item" text="@resourse_manager_menu" cmd="40032"/>
+        <item type="item" text="@tast_manager_menu" cmd="40033"/>
+        <item type="item" text="@computer_console_menu" cmd="40034"/>
+    </menu>
+</orayui>
